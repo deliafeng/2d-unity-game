@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour
 {
-    public float playerSpeed = 7f;
+    public float playerSpeed = 128f;
     public Transform movePoint;
 
     public LayerMask obstacle;
@@ -33,9 +33,9 @@ public class playerController : MonoBehaviour
             if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f)
             {
 
-                if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f), .2f, obstacle))
+                if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal")*32, 0f, 0f), .2f, obstacle))
                 {
-                    movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f);
+                    movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal") * 32, 0f, 0f);
 
                 }
 
@@ -44,9 +44,9 @@ public class playerController : MonoBehaviour
             else if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f)
             {
 
-                if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f), .2f, obstacle))
+                if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical")*32, 0f), .2f, obstacle))
                 {
-                    movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f);
+                    movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical") * 32, 0f);
 
                 }
             }
@@ -85,7 +85,7 @@ public class playerController : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            playerSpeed = 7f;
+            playerSpeed = 128f;
         }
 
         //Interactable
@@ -95,7 +95,7 @@ public class playerController : MonoBehaviour
             if (direction == 0)
             {
 
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, 1f);
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, 32f);
                 if (hit.collider.CompareTag("Interactable")) {
                     hit.collider.GetComponent<Interactable>().TriggerDialogue();
                 }
@@ -104,7 +104,7 @@ public class playerController : MonoBehaviour
 
             else if (direction == 1)
             {
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, 1f);
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, 32f);
                 if (hit.collider.CompareTag("Interactable"))
                 {
                     hit.collider.GetComponent<Interactable>().TriggerDialogue();
@@ -113,7 +113,7 @@ public class playerController : MonoBehaviour
             }
             else if (direction == 2)
             {
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, -transform.up, 1f);
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, -transform.up, 32f);
                 if (hit.collider.CompareTag("Interactable"))
                 {
                     hit.collider.GetComponent<Interactable>().TriggerDialogue();
@@ -122,7 +122,7 @@ public class playerController : MonoBehaviour
             }
             else if (direction == 3)
             {
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, -transform.right, 1f);
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, -transform.right, 32f);
                 if (hit.collider.CompareTag("Interactable"))
                 {
                     hit.collider.GetComponent<Interactable>().TriggerDialogue();
