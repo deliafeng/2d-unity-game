@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class playerController : MonoBehaviour
 {
     public float playerSpeed = 7f;
     public Transform movePoint;
 
     public LayerMask obstacle;
-    public LayerMask interactable;
 
+    private int direction = 4;
+
+    private Ray ray;
 
     // Start is called before the first frame update
     void Start()
@@ -29,12 +32,13 @@ public class playerController : MonoBehaviour
 
             if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f)
             {
-     
-                if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f), .2f, obstacle)) {
+
+                if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f), .2f, obstacle))
+                {
                     movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f);
 
                 }
-                
+
             }
 
             else if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f)
@@ -52,29 +56,85 @@ public class playerController : MonoBehaviour
             }
         }
 
+        //Direction the character is facing
+        //0 is up, 1 is right, 2 is down, 3 is left
+
+        if (Input.GetAxisRaw("Vertical") == 1f)
+        {
+            direction = 0;
+        }
+        if (Input.GetAxisRaw("Horizontal") == 1f)
+        {
+            direction = 1;
+        }
+        if (Input.GetAxisRaw("Vertical") == -1f)
+        {
+            direction = 2;
+        }
+        if (Input.GetAxisRaw("Horizontal") == -1f)
+        {
+            direction = 3;
+        }
+
+
+
         //Shift to Sprint
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            playerSpeed *= 1.2f;
+            playerSpeed *= 1.4f;
         }
-        if(Input.GetKeyUp(KeyCode.LeftShift))
+        if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             playerSpeed = 7f;
         }
 
         //Interactable
-        
-
-
-    }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-
-        if (collision.gameObject.CompareTag("Interactable"))
+        if (Input.GetKeyDown(KeyCode.X))
         {
 
-            Debug.Log("collided");
+            if (direction == 0)
+            {
+
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, 1f);
+                if (hit.collider.CompareTag("Interactable")) {
+                    hit.collider.GetComponent<Interactable>().TriggerDialogue();
+                }
+
+            }
+
+            else if (direction == 1)
+            {
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, 1f);
+                if (hit.collider.CompareTag("Interactable"))
+                {
+                    hit.collider.GetComponent<Interactable>().TriggerDialogue();
+                }
+
+            }
+            else if (direction == 2)
+            {
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, -transform.up, 1f);
+                if (hit.collider.CompareTag("Interactable"))
+                {
+                    hit.collider.GetComponent<Interactable>().TriggerDialogue();
+                }
+
+            }
+            else if (direction == 3)
+            {
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, -transform.right, 1f);
+                if (hit.collider.CompareTag("Interactable"))
+                {
+                    hit.collider.GetComponent<Interactable>().TriggerDialogue();
+                }
+
+            }
+
         }
+
+
+
     }
+
 }
+

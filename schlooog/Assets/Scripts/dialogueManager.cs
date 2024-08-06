@@ -4,18 +4,41 @@ using UnityEngine;
 
 public class dialogueManager : MonoBehaviour
 {
-    private Queue<string> dialogue;
+    private Queue<string> sentences;
 
     // Start is called before the first frame update
     void Start()
     {
-        dialogue = new Queue<string>();
+        sentences = new Queue<string>();
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
 
+        sentences.Clear();
+        foreach(string sentence in dialogue.sentences)
+        {
+            sentences.Enqueue(sentence);
+        }
 
+        DisplayNextSentence();
+    }
+
+    public void DisplayNextSentence()
+    {
+        if (sentences.Count == 0)
+        {
+            EndDialogue();
+            return;
+        }
+
+        string sentence = sentences.Dequeue();
+        Debug.Log(sentence);
+
+    }
+
+    void EndDialogue()
+    {
 
     }
 
