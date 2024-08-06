@@ -1,10 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class dialogueManager : MonoBehaviour
 {
     private Queue<string> sentences;
+    public TextMeshProUGUI nameText;
+    public TextMeshProUGUI dialogueText;
+
+    public Animator animator;
+    public bool isActivated = false;
 
     // Start is called before the first frame update
     void Start()
@@ -14,32 +21,53 @@ public class dialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-
-        sentences.Clear();
-        foreach(string sentence in dialogue.sentences)
+        if (!isActivated)
         {
-            sentences.Enqueue(sentence);
-        }
+            animator.SetBool("isActivated", true);
+            nameText.text = dialogue.name;
+            isActivated = true;
 
-        DisplayNextSentence();
+            sentences.Clear();
+            foreach (string sentence in dialogue.sentences)
+            {
+                sentences.Enqueue(sentence);
+            }
+
+            DisplayNextSentence();
+        }
     }
 
     public void DisplayNextSentence()
     {
-        if (sentences.Count == 0)
+        if (isActivated)
         {
-            EndDialogue();
-            return;
+            if (sentences.Count == 0)
+            {
+                EndDialogue();
+                return;
+            }
+
+            string sentence = sentences.Dequeue();
+            StopAllCoroutines();
+            StartCoroutine(TypeSentence(sentence));
         }
 
-        string sentence = sentences.Dequeue();
-        Debug.Log(sentence);
+    }
 
+    IEnumerator TypeSentence(string sentence)
+    {
+        dialogueText.text = "";
+        foreach(char letter in sentence.ToCharArray())
+        {
+            dialogueText.text += letter;
+            yield return null;
+        }
     }
 
     void EndDialogue()
     {
-
+        animator.SetBool("isActivated", false);
+        isActivated = false;
     }
 
 }
