@@ -18,7 +18,7 @@ public class playerController : MonoBehaviour
     public Animator inventory;
     private bool isInventoryOpen = false;
     private Animator playerAnimation;
-
+    private RaycastHit2D hit;
     // Start is called before the first frame update
     void Start()
     {
@@ -147,20 +147,24 @@ public class playerController : MonoBehaviour
             {
                 if (direction == 0)
                 {
+                    hit = Physics2D.Raycast(transform.position, transform.up, 32f);
                     detectObject();
                 }
 
                 else if (direction == 1)
                 {
+                    hit = Physics2D.Raycast(transform.position, transform.right, 32f);
                     detectObject();
 
                 }
                 else if (direction == 2)
                 {
+                    hit = Physics2D.Raycast(transform.position, -transform.up, 32f);
                     detectObject();
                 }
                 else if (direction == 3)
                 {
+                    hit = Physics2D.Raycast(transform.position, -transform.right, 32f);
                     detectObject();
                 }
             }
@@ -188,10 +192,9 @@ public class playerController : MonoBehaviour
 
     }
 
-    //Shoot a ray
+    //Detect tags
     private void detectObject()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, 32f);
         if (hit && hit.collider.CompareTag("Interactable"))
         {
             hit.collider.GetComponent<Interactable>().TriggerDialogue();
