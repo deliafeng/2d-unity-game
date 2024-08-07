@@ -5,12 +5,14 @@ using UnityEngine;
 public class Collectible : MonoBehaviour
 {
 
-    public int item;
     public string itemName;
+    public Dialogue dialogue;
     //also include item sprite later
 
-    public void collectItem()
+    public void CollectItem()
     {
-        FindObjectOfType<CollectibleManager>().identifyItem(item, itemName);
+        FindObjectOfType<CollectibleManager>().identifyItem(itemName);
+        FindObjectOfType<dialogueManager>().StartDialogue(dialogue);
+        Destroy(this.gameObject);
     }
 }

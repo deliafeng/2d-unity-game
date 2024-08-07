@@ -11,9 +11,12 @@ public class playerController : MonoBehaviour
     public LayerMask obstacle;
 
     private int direction = 4;
-
     private Ray ray;
+
     public bool inDialogue = false;
+
+    public Animator inventory;
+    private bool isInventoryOpen = false;
 
     // Start is called before the first frame update
     void Start()
@@ -77,6 +80,23 @@ public class playerController : MonoBehaviour
             {
                 direction = 3;
             }
+
+
+            //Open inventory
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+
+                if (!isInventoryOpen)
+                {
+                    inventory.SetBool("isOpen", true);
+                    isInventoryOpen = true;
+                } else
+                {
+                    inventory.SetBool("isOpen", false);
+                    isInventoryOpen = false;
+                }
+            }
         }
 
 
@@ -99,14 +119,12 @@ public class playerController : MonoBehaviour
                 {
 
                     RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, 32f);
-                    if (hit.collider.CompareTag("Interactable"))
+                    if (hit && hit.collider.CompareTag("Interactable"))
                     {
                         hit.collider.GetComponent<Interactable>().TriggerDialogue();
-                    }
-
-                    if (hit.collider.CompareTag("Collectible"))
+                    } else if (hit && hit.collider.CompareTag("Collectible"))
                     {
-                        hit.collider.GetComponent<Interactable>().TriggerDialogue();
+                        hit.collider.GetComponent<Collectible>().CollectItem(); 
                     }
 
                 }
@@ -142,10 +160,9 @@ public class playerController : MonoBehaviour
 
             if (inDialogue)
             {
-                if (Input.GetKeyDown(KeyCode.X))
-                {
-                    FindObjectOfType<dialogueManager>().DisplayNextSentence();
-                }
+
+                FindObjectOfType<dialogueManager>().DisplayNextSentence();
+
             }
 
         }
