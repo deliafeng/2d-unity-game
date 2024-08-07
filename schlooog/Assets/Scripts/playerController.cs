@@ -70,28 +70,43 @@ public class playerController : MonoBehaviour
             {
                 direction = 0;
                 SetAnimation("isGoingUp");
+                playerAnimation.Play("PickleUp");
 
             }
             if (Input.GetAxisRaw("Horizontal") == 1f)
             {
                 direction = 1;
                 SetAnimation("isGoingRight");
+                playerAnimation.Play("PickleRight");
             }
             if (Input.GetAxisRaw("Vertical") == -1f)
             {
                 direction = 2;
                 SetAnimation("isGoingDown");
+                playerAnimation.Play("PickleDown");
             }
             if (Input.GetAxisRaw("Horizontal") == -1f)
             {
                 direction = 3;
                 SetAnimation("isGoingLeft");
+                playerAnimation.Play("PickleLeft");
             }
 
             if(Input.GetAxisRaw("Vertical") == 0f && Input.GetAxisRaw("Horizontal")==0f)
             {
 
-               playerAnimation.SetBool("isMoving", false);
+               if(direction == 0) {
+                playerAnimation.Play("PickleUp_Idle");
+            }
+                else if(direction==1) {
+                playerAnimation.Play("PickleRight_Idle");
+               }
+               else if (direction == 2) {
+                playerAnimation.Play("PickleDown_Idle");
+               } else {
+                playerAnimation.Play("PickleLeft_Idle");
+               }
+
 
             }
 
