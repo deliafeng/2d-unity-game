@@ -11,7 +11,7 @@ public class dialogueManager : MonoBehaviour
     public TextMeshProUGUI dialogueText;
 
     public Animator animator;
-    public bool isActivated = false;
+    private bool isActivated = false;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +39,7 @@ public class dialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
+        FindObjectOfType<playerController>().inDialogue = true;
         if (isActivated)
         {
             if (sentences.Count == 0)
@@ -68,6 +69,7 @@ public class dialogueManager : MonoBehaviour
     {
         animator.SetBool("isActivated", false);
         isActivated = false;
+        FindObjectOfType<playerController>().inDialogue = false;
     }
 
 }
