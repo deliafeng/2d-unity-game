@@ -15,11 +15,11 @@ public class Teleport : MonoBehaviour
 
     // Update is called once per frame
 
-        public void TeleportToScene() { 
-            Debug.Log("triggered");
-            if(this.gameObject.CompareTag("Player")) {
+    void OnCollisionEnter2D(Collision2D collider) { 
+
+            if(collider.gameObject.CompareTag("Player")) {
                 SceneManager.LoadScene(nextSceneName);
             }
-        }
+    }
 
 }
