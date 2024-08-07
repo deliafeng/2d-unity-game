@@ -17,11 +17,13 @@ public class playerController : MonoBehaviour
 
     public Animator inventory;
     private bool isInventoryOpen = false;
+    private Animator playerAnimation;
 
     // Start is called before the first frame update
     void Start()
     {
         movePoint.parent = null;
+        playerAnimation = this.gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -67,18 +69,30 @@ public class playerController : MonoBehaviour
             if (Input.GetAxisRaw("Vertical") == 1f)
             {
                 direction = 0;
+                SetAnimation("isGoingUp");
+
             }
             if (Input.GetAxisRaw("Horizontal") == 1f)
             {
                 direction = 1;
+                SetAnimation("isGoingRight");
             }
             if (Input.GetAxisRaw("Vertical") == -1f)
             {
                 direction = 2;
+                SetAnimation("isGoingDown");
             }
             if (Input.GetAxisRaw("Horizontal") == -1f)
             {
                 direction = 3;
+                SetAnimation("isGoingLeft");
+            }
+
+            if(Input.GetAxisRaw("Vertical") == 0f && Input.GetAxisRaw("Horizontal")==0f)
+            {
+
+               playerAnimation.SetBool("isMoving", false);
+
             }
 
 
@@ -171,5 +185,15 @@ public class playerController : MonoBehaviour
 
     }
 
+    private void SetAnimation(string currentAnimation)
+    {
+        playerAnimation.SetBool("isMoving", true);
+        playerAnimation.SetBool("isGoingUp", false);
+        playerAnimation.SetBool("isGoingDown", false);
+        playerAnimation.SetBool("isGoingLeft", false);
+        playerAnimation.SetBool("isGoingRight", false);
+        playerAnimation.SetBool(currentAnimation, true);
+
+    }
 }
 
