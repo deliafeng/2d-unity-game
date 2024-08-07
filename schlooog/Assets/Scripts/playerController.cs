@@ -124,51 +124,29 @@ public class playerController : MonoBehaviour
             playerSpeed = 128f;
         }
 
-        //Interactable
+        //Interactable and collectible detection
+        //Shoot a ray and check the tag of the object if it is hit
         if (Input.GetKeyDown(KeyCode.X))
         {
             if (!inDialogue)
             {
                 if (direction == 0)
                 {
-
-                    RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, 32f);
-                    if (hit && hit.collider.CompareTag("Interactable"))
-                    {
-                        hit.collider.GetComponent<Interactable>().TriggerDialogue();
-                    } else if (hit && hit.collider.CompareTag("Collectible"))
-                    {
-                        hit.collider.GetComponent<Collectible>().CollectItem(); 
-                    }
-
+                    detectObject();
                 }
 
                 else if (direction == 1)
                 {
-                    RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, 32f);
-                    if (hit.collider.CompareTag("Interactable"))
-                    {
-                        hit.collider.GetComponent<Interactable>().TriggerDialogue();
-                    }
+                    detectObject();
 
                 }
                 else if (direction == 2)
                 {
-                    RaycastHit2D hit = Physics2D.Raycast(transform.position, -transform.up, 32f);
-                    if (hit.collider.CompareTag("Interactable"))
-                    {
-                        hit.collider.GetComponent<Interactable>().TriggerDialogue();
-                    }
-
+                    detectObject();
                 }
                 else if (direction == 3)
                 {
-                    RaycastHit2D hit = Physics2D.Raycast(transform.position, -transform.right, 32f);
-                    if (hit.collider.CompareTag("Interactable"))
-                    {
-                        hit.collider.GetComponent<Interactable>().TriggerDialogue();
-                    }
-
+                    detectObject();
                 }
             }
 
@@ -181,10 +159,9 @@ public class playerController : MonoBehaviour
 
         }
 
-
-
     }
 
+    //Set the current animation into the direction of movement
     private void SetAnimation(string currentAnimation)
     {
         playerAnimation.SetBool("isMoving", true);
@@ -194,6 +171,20 @@ public class playerController : MonoBehaviour
         playerAnimation.SetBool("isGoingRight", false);
         playerAnimation.SetBool(currentAnimation, true);
 
+    }
+
+    //Shoot a ray
+    private void detectObject()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, 32f);
+        if (hit && hit.collider.CompareTag("Interactable"))
+        {
+            hit.collider.GetComponent<Interactable>().TriggerDialogue();
+        }
+        else if (hit && hit.collider.CompareTag("Collectible"))
+        {
+            hit.collider.GetComponent<Collectible>().CollectItem();
+        }
     }
 }
 
