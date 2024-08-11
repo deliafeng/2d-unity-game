@@ -25,6 +25,7 @@ public class playerController : MonoBehaviour
 
     private void Awake() {
         inventory = new Inventory();
+        uiInventory.SetInventory(inventory);
     }
     // Start is called before the first frame update
     void Start()
