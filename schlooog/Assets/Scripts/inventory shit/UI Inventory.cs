@@ -9,6 +9,7 @@ public class UIInventory : MonoBehaviour
     private Transform itemSlotContainer;
     private Transform itemSlotTemplate;
 
+
     private void Awake() {
         itemSlotContainer = transform.Find("itemSlotContainer");
         itemSlotTemplate = itemSlotContainer.Find("itemSlotTemplate");
@@ -17,6 +18,7 @@ public class UIInventory : MonoBehaviour
     public void SetInventory(Inventory inventory) {
         this.inventory = inventory;
         RefreshInventoryItems();
+        
     }
 
     private void RefreshInventoryItems() {
@@ -29,9 +31,10 @@ public class UIInventory : MonoBehaviour
             itemSlotRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize, y*itemSlotCellSize);
             Image image = itemSlotRectTransform.Find("itemImage").GetComponent<Image>();
             image.sprite = item.GetSprite();
+            
             x++;
             if (x>=3) {
-                Debug.Log("hit three");
+      
                 x = 0;
                 y--;
             }

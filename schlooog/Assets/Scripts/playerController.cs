@@ -17,7 +17,7 @@ public class playerController : MonoBehaviour
 
     public bool inDialogue = false;
 
-    public Animator inv;
+    public Animator inventoryAnimator;
     private bool isInventoryOpen = false;
     private Animator playerAnimation;
     private RaycastHit2D hit;
@@ -130,11 +130,11 @@ public class playerController : MonoBehaviour
 
                 if (!isInventoryOpen)
                 {
-                    inv.SetBool("isOpen", true);
+                    inventoryAnimator.SetBool("isOpen", true);
                     isInventoryOpen = true;
                 } else
                 {
-                    inv.SetBool("isOpen", false);
+                    inventoryAnimator.SetBool("isOpen", false);
                     isInventoryOpen = false;
                 }
             }
