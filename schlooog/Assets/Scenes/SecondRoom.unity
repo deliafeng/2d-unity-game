@@ -269,7 +269,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2599955861015302171, guid: c3edbea0112ed42caa0ec3c2e276f6a5, type: 3}
       propertyPath: nextSceneName
-      value: StartingRoom
+      value: CellSix
       objectReference: {fileID: 0}
     - target: {fileID: 4933270874432605787, guid: c3edbea0112ed42caa0ec3c2e276f6a5, type: 3}
       propertyPath: m_LocalPosition.x

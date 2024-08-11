@@ -9,6 +9,7 @@ public class dialogueManager : MonoBehaviour
     private Queue<string> sentences;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
+    public GameObject dialogueCanvas;
 
     public Animator animator;
     private bool isActivated = false;
@@ -26,8 +27,10 @@ public class dialogueManager : MonoBehaviour
             animator.SetBool("isActivated", true);
             nameText.text = dialogue.name;
             isActivated = true;
+            
 
             sentences.Clear();
+            dialogueCanvas.SetActive(true);
             foreach (string sentence in dialogue.sentences)
             {
                 sentences.Enqueue(sentence);
@@ -70,6 +73,7 @@ public class dialogueManager : MonoBehaviour
         animator.SetBool("isActivated", false);
         isActivated = false;
         FindObjectOfType<playerController>().inDialogue = false;
+        dialogueCanvas.SetActive(false);
     }
 
 }
