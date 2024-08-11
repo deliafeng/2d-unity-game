@@ -2,17 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+public class Item {
+    public enum ItemType{
+        redKey,
+        bluKey,
+        ylwKey,
+        grnKey,
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
+public ItemType itemType;
+public int amount;
 }

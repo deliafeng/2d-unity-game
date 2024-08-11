@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour
 {
+    [SerializeField] private UIInventory uiInventory;
     public float playerSpeed = 128f;
     public Transform movePoint;
 
@@ -16,10 +17,15 @@ public class playerController : MonoBehaviour
 
     public bool inDialogue = false;
 
-    public Animator inventory;
+    public Animator inv;
     private bool isInventoryOpen = false;
     private Animator playerAnimation;
     private RaycastHit2D hit;
+    private Inventory inventory;
+
+    private void Awake() {
+        inventory = new Inventory();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -123,11 +129,11 @@ public class playerController : MonoBehaviour
 
                 if (!isInventoryOpen)
                 {
-                    inventory.SetBool("isOpen", true);
+                    inv.SetBool("isOpen", true);
                     isInventoryOpen = true;
                 } else
                 {
-                    inventory.SetBool("isOpen", false);
+                    inv.SetBool("isOpen", false);
                     isInventoryOpen = false;
                 }
             }

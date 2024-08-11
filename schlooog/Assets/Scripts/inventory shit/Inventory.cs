@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+public class Inventory {
+
+    private List<Item> itemList;
+
+    public Inventory() {
+        itemList = new List<Item>();
+
+        AddItem (new Item { itemType = Item.ItemType.redKey, amount = 1 });
+        Debug.Log(itemList.Count);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void AddItem(Item item) {
+        itemList.Add(item);
     }
+
 }
