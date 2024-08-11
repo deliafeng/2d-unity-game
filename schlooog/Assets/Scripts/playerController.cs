@@ -9,6 +9,7 @@ public class playerController : MonoBehaviour
     public Transform movePoint;
 
     public LayerMask obstacle;
+    public LayerMask teleporter;
 
     private int direction = 4;
     private Ray ray;
@@ -39,7 +40,11 @@ public class playerController : MonoBehaviour
 
                 if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f)
                 {
+                    if (Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal") * 32, 0f, 0f), .2f, teleporter)) {
 
+
+
+                    }
                     if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal") * 32, 0f, 0f), .2f, obstacle))
                     {
                         movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal") * 32, 0f, 0f);
