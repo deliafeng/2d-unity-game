@@ -24,12 +24,14 @@ public class playerController : MonoBehaviour
     private Inventory inventory;
 
     private void Awake() {
-        inventory = new Inventory();
-        uiInventory.SetInventory(inventory);
+        /* ratty fix your servers
+         * inventory = new Inventory();
+        uiInventory.SetInventory(inventory); */
     }
     // Start is called before the first frame update
     void Start()
     {
+
         movePoint.parent = null;
         playerAnimation = this.gameObject.GetComponent<Animator>();
     }
@@ -116,7 +118,7 @@ public class playerController : MonoBehaviour
                else if (direction == 2) {
                 playerAnimation.Play("PickleDown_Idle");
                } else {
-                playerAnimation.Play("PickleLeft_Idle");
+                    playerAnimation.Play("PickleLeft_Idle");
                }
 
 
