@@ -4,16 +4,19 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class UIInventory : MonoBehaviour
-{
+{    
+    private Inventory inv;
     public Transform itemSlotContainer;
     public Transform itemSlotTemplate;
 
-    private Inventory inv;
+
 
 
     private void Awake() {
-
+       // itemSlotContainer = transform.Find("itemSlotContainer");
+      //  itemSlotTemplate = transform.Find("itemSlotTemplate");
     }
+
 
     public void SetInventory(Inventory inventory) {
         inv = inventory;
