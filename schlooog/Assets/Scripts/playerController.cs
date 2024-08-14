@@ -24,9 +24,9 @@ public class playerController : MonoBehaviour
     private Inventory inventory;
 
     private void Awake() {
-        /* ratty fix your servers
-         * inventory = new Inventory();
-        uiInventory.SetInventory(inventory); */
+
+        inventory = new Inventory();
+        uiInventory.SetInventory(inventory);
     }
     // Start is called before the first frame update
     void Start()
