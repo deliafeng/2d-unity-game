@@ -782,15 +782,15 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0
+    x: -0.11927084
+    y: -0.35277778
     width: 1
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 182.78413
+  orthographic size: 180
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3839,11 +3839,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd0b4d60f71124b6f9e3be8ebe492fac, type: 3}
---- !u!95 &2051217944 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 966722024417356808, guid: 09d73cd04261a4dd9b5968ba5843bf4d, type: 3}
-  m_PrefabInstance: {fileID: 2259765748440886643}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2076028021 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 757795293829028439, guid: dd0b4d60f71124b6f9e3be8ebe492fac, type: 3}
@@ -4000,10 +3995,22 @@ PrefabInstance:
       propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5577409619110399663, guid: 09d73cd04261a4dd9b5968ba5843bf4d, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 5577409619110399663, guid: 09d73cd04261a4dd9b5968ba5843bf4d, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 6278869945402196849, guid: 09d73cd04261a4dd9b5968ba5843bf4d, type: 3}
       propertyPath: dialogueCanvas
       value: 
       objectReference: {fileID: 677191649}
+    - target: {fileID: 7415773722254493558, guid: 09d73cd04261a4dd9b5968ba5843bf4d, type: 3}
+      propertyPath: m_Size
+      value: 0.2771448
+      objectReference: {fileID: 0}
     - target: {fileID: 7448061161697390145, guid: 09d73cd04261a4dd9b5968ba5843bf4d, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -4018,7 +4025,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7746974746406334986, guid: 09d73cd04261a4dd9b5968ba5843bf4d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.9946
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7746974746406334986, guid: 09d73cd04261a4dd9b5968ba5843bf4d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4073,10 +4080,27 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1148561824299545397, guid: 09d73cd04261a4dd9b5968ba5843bf4d, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09d73cd04261a4dd9b5968ba5843bf4d, type: 3}
+--- !u!95 &2259765748440886644 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6380983987722819024, guid: 09d73cd04261a4dd9b5968ba5843bf4d, type: 3}
+  m_PrefabInstance: {fileID: 2259765748440886643}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2259765748440886645 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2059621198123663318, guid: 09d73cd04261a4dd9b5968ba5843bf4d, type: 3}
+  m_PrefabInstance: {fileID: 2259765748440886643}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c72e4a0c60c4893418e3a83915779357, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4440286862248977742
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4132,7 +4156,15 @@ PrefabInstance:
     - target: {fileID: 4707297088954194862, guid: c7fdf46689ec94d48af6097820d9c47f, type: 3}
       propertyPath: inventory
       value: 
-      objectReference: {fileID: 2051217944}
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707297088954194862, guid: c7fdf46689ec94d48af6097820d9c47f, type: 3}
+      propertyPath: uiInventory
+      value: 
+      objectReference: {fileID: 2259765748440886645}
+    - target: {fileID: 4707297088954194862, guid: c7fdf46689ec94d48af6097820d9c47f, type: 3}
+      propertyPath: inventoryAnimator
+      value: 
+      objectReference: {fileID: 2259765748440886644}
     - target: {fileID: 4707297088954194862, guid: c7fdf46689ec94d48af6097820d9c47f, type: 3}
       propertyPath: teleporter.m_Bits
       value: 128
