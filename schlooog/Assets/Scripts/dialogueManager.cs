@@ -24,13 +24,14 @@ public class dialogueManager : MonoBehaviour
     {
         if (!isActivated)
         {
+            dialogueCanvas.SetActive(true);
             animator.SetBool("isActivated", true);
             nameText.text = dialogue.name;
             isActivated = true;
             
 
             sentences.Clear();
-            dialogueCanvas.SetActive(true);
+            
             foreach (string sentence in dialogue.sentences)
             {
                 sentences.Enqueue(sentence);
