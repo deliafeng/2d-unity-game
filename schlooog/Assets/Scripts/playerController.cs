@@ -23,19 +23,16 @@ public class playerController : MonoBehaviour
     private RaycastHit2D hit;
     private Inventory inventory;
 
-    private void Awake() {
-
-        inventory = new Inventory();
-        uiInventory.SetInventory(inventory);
-    }
     // Start is called before the first frame update
     void Start()
     {
 
         movePoint.parent = null;
         playerAnimation = this.gameObject.GetComponent<Animator>();
-    }
 
+        inventory = new Inventory();
+        uiInventory.SetInventory(inventory);
+    }
     // Update is called once per frame
     void Update()
     {
