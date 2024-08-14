@@ -7,33 +7,43 @@ using TMPro;
 public class dialogueManager : MonoBehaviour
 {
     private Queue<string> sentences;
+    private Queue<Sprite> sprites;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
     public GameObject dialogueCanvas;
+    public Image canvasSprite;
 
     public Animator animator;
     private bool isActivated = false;
+
 
     // Start is called before the first frame update
     void Start()
     {
         sentences = new Queue<string>();
+        sprites = new Queue<Sprite>();
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
         if (!isActivated)
         {
+            dialogueCanvas.SetActive(true);
             animator.SetBool("isActivated", true);
             nameText.text = dialogue.name;
             isActivated = true;
-            
 
+            sprites.Clear();
             sentences.Clear();
-            dialogueCanvas.SetActive(true);
+            
             foreach (string sentence in dialogue.sentences)
             {
                 sentences.Enqueue(sentence);
+            }
+
+            foreach (Sprite sprite in dialogue.sprites)
+            {
+                sprites.Enqueue(sprite);
             }
 
             DisplayNextSentence();
@@ -52,6 +62,8 @@ public class dialogueManager : MonoBehaviour
             }
 
             string sentence = sentences.Dequeue();
+            Sprite sprite = sprites.Dequeue();
+            canvasSprite.sprite = sprite;
             StopAllCoroutines();
             StartCoroutine(TypeSentence(sentence));
         }
@@ -73,6 +85,14 @@ public class dialogueManager : MonoBehaviour
         animator.SetBool("isActivated", false);
         isActivated = false;
         FindObjectOfType<playerController>().inDialogue = false;
+        StopAllCoroutines();
+        StartCoroutine(Wait());
+        
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(0.3f);
         dialogueCanvas.SetActive(false);
     }
 
