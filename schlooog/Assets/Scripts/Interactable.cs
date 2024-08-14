@@ -6,6 +6,8 @@ public class Interactable : MonoBehaviour
 {
 
     public Dialogue dialogue;
+
+
     //Boolean to ensure conversation can't be called again when X is being pressed
 
    

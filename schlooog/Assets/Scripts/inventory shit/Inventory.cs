@@ -11,10 +11,10 @@ public class Inventory {
     public Inventory() {
         itemList = new List<Item>();
 
-        AddItem (new Item { itemType = Item.ItemType.redKey, amount = 1 });
+        /*AddItem (new Item { itemType = Item.ItemType.redKey, amount = 1 });
         AddItem (new Item { itemType = Item.ItemType.bluKey, amount = 1 });
         AddItem (new Item { itemType = Item.ItemType.ylwKey, amount = 1 });
-        AddItem (new Item { itemType = Item.ItemType.grnKey, amount = 1 });
+        AddItem (new Item { itemType = Item.ItemType.grnKey, amount = 1 });*/
     }
 
     public void AddItem(Item item) {

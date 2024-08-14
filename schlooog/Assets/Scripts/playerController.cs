@@ -129,6 +129,7 @@ public class playerController : MonoBehaviour
 
                 if (!isInventoryOpen)
                 {
+                    uiInventory.SetInventory(inventory);
                     inventoryAnimator.SetBool("isOpen", true);
                     isInventoryOpen = true;
                 } else
@@ -213,6 +214,7 @@ public class playerController : MonoBehaviour
         else if (hit && hit.collider.CompareTag("Collectible"))
         {
             hit.collider.GetComponent<Collectible>().CollectItem();
+            inventory.AddItem(hit.collider.GetComponent<Collectible>().item);
         }
     }
 }
