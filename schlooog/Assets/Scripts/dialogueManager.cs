@@ -63,7 +63,10 @@ public class dialogueManager : MonoBehaviour
 
             string sentence = sentences.Dequeue();
             Sprite sprite = sprites.Dequeue();
-            canvasSprite.sprite = sprite;
+            if (sprite != null)
+            {
+                canvasSprite.sprite = sprite;
+            }
             StopAllCoroutines();
             StartCoroutine(TypeSentence(sentence));
         }

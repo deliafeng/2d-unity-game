@@ -19,10 +19,16 @@ public class Inventory {
 
     public void AddItem(Item item) {
         itemList.Add(item);
+        
     }
 
     public List<Item> GetItemList() {
         return itemList;
+    }
+
+    public void RemoveItem(Item removedItem)
+    {
+        itemList.Remove(removedItem);
     }
 
 }

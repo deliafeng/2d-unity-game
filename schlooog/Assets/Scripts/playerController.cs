@@ -215,6 +215,32 @@ public class playerController : MonoBehaviour
         {
             hit.collider.GetComponent<Collectible>().CollectItem();
             inventory.AddItem(hit.collider.GetComponent<Collectible>().item);
+        } else if (hit && hit.collider.CompareTag("Unlockable"))
+        {
+            bool unlocked = false;
+            Item key = hit.collider.GetComponent<Unlockable>().item;  
+            List<Item> list = inventory.GetItemList();
+
+            Item usedItem = null;
+
+            foreach (Item item in list)
+            {
+                if (item.itemType == key.itemType)
+                {
+                    unlocked = true;
+                    usedItem = item;
+                }
+            }   
+
+            if (unlocked)
+            {
+                hit.collider.GetComponent<Unlockable>().UnlockedDialogue();
+                inventory.RemoveItem(usedItem);
+            }
+            else
+            {
+                hit.collider.GetComponent<Unlockable>().LockedDialogue();
+            }
         }
     }
 }

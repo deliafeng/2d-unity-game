@@ -1840,143 +1840,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 757795293829028439, guid: dd0b4d60f71124b6f9e3be8ebe492fac, type: 3}
   m_PrefabInstance: {fileID: 149022252}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1386518126
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 472609228674244531, guid: 34978adc618814127809663c1b4de69e, type: 3}
-      propertyPath: m_Size.x
-      value: 55.855278
-      objectReference: {fileID: 0}
-    - target: {fileID: 472609228674244531, guid: 34978adc618814127809663c1b4de69e, type: 3}
-      propertyPath: m_Size.y
-      value: 28.188698
-      objectReference: {fileID: 0}
-    - target: {fileID: 472609228674244531, guid: 34978adc618814127809663c1b4de69e, type: 3}
-      propertyPath: m_Offset.x
-      value: 2.893074
-      objectReference: {fileID: 0}
-    - target: {fileID: 472609228674244531, guid: 34978adc618814127809663c1b4de69e, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.022014618
-      objectReference: {fileID: 0}
-    - target: {fileID: 472609228674244531, guid: 34978adc618814127809663c1b4de69e, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 472609228674244531, guid: 34978adc618814127809663c1b4de69e, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 777081517773116978, guid: 34978adc618814127809663c1b4de69e, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 777081517773116978, guid: 34978adc618814127809663c1b4de69e, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 777081517773116978, guid: 34978adc618814127809663c1b4de69e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 777081517773116978, guid: 34978adc618814127809663c1b4de69e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 112
-      objectReference: {fileID: 0}
-    - target: {fileID: 777081517773116978, guid: 34978adc618814127809663c1b4de69e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 777081517773116978, guid: 34978adc618814127809663c1b4de69e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 777081517773116978, guid: 34978adc618814127809663c1b4de69e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 777081517773116978, guid: 34978adc618814127809663c1b4de69e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 777081517773116978, guid: 34978adc618814127809663c1b4de69e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 777081517773116978, guid: 34978adc618814127809663c1b4de69e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 777081517773116978, guid: 34978adc618814127809663c1b4de69e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 777081517773116978, guid: 34978adc618814127809663c1b4de69e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2340577212038539990, guid: 34978adc618814127809663c1b4de69e, type: 3}
-      propertyPath: dialogue.name
-      value: Cabinet
-      objectReference: {fileID: 0}
-    - target: {fileID: 2340577212038539990, guid: 34978adc618814127809663c1b4de69e, type: 3}
-      propertyPath: dialogue.sprites.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2340577212038539990, guid: 34978adc618814127809663c1b4de69e, type: 3}
-      propertyPath: dialogue.sentences.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2340577212038539990, guid: 34978adc618814127809663c1b4de69e, type: 3}
-      propertyPath: dialogue.sprites.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: 2ef9dba52774b4497890aa8c0c113ad1, type: 3}
-    - target: {fileID: 2340577212038539990, guid: 34978adc618814127809663c1b4de69e, type: 3}
-      propertyPath: dialogue.sprites.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 2ef9dba52774b4497890aa8c0c113ad1, type: 3}
-    - target: {fileID: 2340577212038539990, guid: 34978adc618814127809663c1b4de69e, type: 3}
-      propertyPath: dialogue.sentences.Array.data[1]
-      value: An old cabinet. It is locked.
-      objectReference: {fileID: 0}
-    - target: {fileID: 2340577212038539990, guid: 34978adc618814127809663c1b4de69e, type: 3}
-      propertyPath: dialogue.sentences.Array.data[2]
-      value: I am currently in the washroom after a big lunch.
-      objectReference: {fileID: 0}
-    - target: {fileID: 2340577212038539990, guid: 34978adc618814127809663c1b4de69e, type: 3}
-      propertyPath: dialogue.sentences.Array.data[3]
-      value: I am such a poopy rat butt!
-      objectReference: {fileID: 0}
-    - target: {fileID: 7979295328219421303, guid: 34978adc618814127809663c1b4de69e, type: 3}
-      propertyPath: m_Name
-      value: Cabinet
-      objectReference: {fileID: 0}
-    - target: {fileID: 8891931763349434794, guid: 34978adc618814127809663c1b4de69e, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 2ef9dba52774b4497890aa8c0c113ad1, type: 3}
-    - target: {fileID: 8891931763349434794, guid: 34978adc618814127809663c1b4de69e, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8891931763349434794, guid: 34978adc618814127809663c1b4de69e, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8891931763349434794, guid: 34978adc618814127809663c1b4de69e, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 34978adc618814127809663c1b4de69e, type: 3}
 --- !u!4 &1406291748 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 757795293829028439, guid: dd0b4d60f71124b6f9e3be8ebe492fac, type: 3}
@@ -2001,7 +1864,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: c3524867b45b6c74fa28a30b7b4abf85, type: 3}
     - target: {fileID: 5340466457218550881, guid: 4c0d138005d76415282a9824f8893347, type: 3}
       propertyPath: m_Name
-      value: Collectible_Collision
+      value: BlueKey
       objectReference: {fileID: 0}
     - target: {fileID: 8602346242179438600, guid: 4c0d138005d76415282a9824f8893347, type: 3}
       propertyPath: item.amount
@@ -2017,15 +1880,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8602346242179438600, guid: 4c0d138005d76415282a9824f8893347, type: 3}
       propertyPath: dialogue.sprites.Array.size
-      value: 2
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8602346242179438600, guid: 4c0d138005d76415282a9824f8893347, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8602346242179438600, guid: 4c0d138005d76415282a9824f8893347, type: 3}
       propertyPath: dialogue.sprites.Array.data[1]
       value: 
       objectReference: {fileID: 21300000, guid: c3524867b45b6c74fa28a30b7b4abf85, type: 3}
     - target: {fileID: 8602346242179438600, guid: 4c0d138005d76415282a9824f8893347, type: 3}
+      propertyPath: dialogue.sprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8602346242179438600, guid: 4c0d138005d76415282a9824f8893347, type: 3}
+      propertyPath: dialogue.sprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 5f78b01cbed0c0d4d8920331aeb3119b, type: 3}
+    - target: {fileID: 8602346242179438600, guid: 4c0d138005d76415282a9824f8893347, type: 3}
+      propertyPath: dialogue.sprites.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8602346242179438600, guid: 4c0d138005d76415282a9824f8893347, type: 3}
       propertyPath: dialogue.sentences.Array.data[1]
       value: Pickle picked up the Blue Key!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8602346242179438600, guid: 4c0d138005d76415282a9824f8893347, type: 3}
+      propertyPath: dialogue.sentences.Array.data[2]
+      value: Testing some code...
+      objectReference: {fileID: 0}
+    - target: {fileID: 8602346242179438600, guid: 4c0d138005d76415282a9824f8893347, type: 3}
+      propertyPath: dialogue.sentences.Array.data[3]
+      value: Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 8602346242179438600, guid: 4c0d138005d76415282a9824f8893347, type: 3}
+      propertyPath: dialogue.sentences.Array.data[4]
+      value: It works!
       objectReference: {fileID: 0}
     - target: {fileID: 8640097286935769481, guid: 4c0d138005d76415282a9824f8893347, type: 3}
       propertyPath: m_LocalScale.x
@@ -4554,6 +4445,99 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7fdf46689ec94d48af6097820d9c47f, type: 3}
+--- !u!1001 &4479374326870386648
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1477542263775727219, guid: 0e34db1d3db5d4a4684a09bf8aaf0176, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477542263775727219, guid: 0e34db1d3db5d4a4684a09bf8aaf0176, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477542263775727219, guid: 0e34db1d3db5d4a4684a09bf8aaf0176, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477542263775727219, guid: 0e34db1d3db5d4a4684a09bf8aaf0176, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477542263775727219, guid: 0e34db1d3db5d4a4684a09bf8aaf0176, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477542263775727219, guid: 0e34db1d3db5d4a4684a09bf8aaf0176, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477542263775727219, guid: 0e34db1d3db5d4a4684a09bf8aaf0176, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477542263775727219, guid: 0e34db1d3db5d4a4684a09bf8aaf0176, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477542263775727219, guid: 0e34db1d3db5d4a4684a09bf8aaf0176, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477542263775727219, guid: 0e34db1d3db5d4a4684a09bf8aaf0176, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2851119226013034949, guid: 0e34db1d3db5d4a4684a09bf8aaf0176, type: 3}
+      propertyPath: dialogue_unlocked.sprites.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2851119226013034949, guid: 0e34db1d3db5d4a4684a09bf8aaf0176, type: 3}
+      propertyPath: dialogue_unlocked.sentences.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2851119226013034949, guid: 0e34db1d3db5d4a4684a09bf8aaf0176, type: 3}
+      propertyPath: dialogue_unlocked.sprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 2ef9dba52774b4497890aa8c0c113ad1, type: 3}
+    - target: {fileID: 2851119226013034949, guid: 0e34db1d3db5d4a4684a09bf8aaf0176, type: 3}
+      propertyPath: dialogue_unlocked.sentences.Array.data[1]
+      value: Click!
+      objectReference: {fileID: 0}
+    - target: {fileID: 2851119226013034949, guid: 0e34db1d3db5d4a4684a09bf8aaf0176, type: 3}
+      propertyPath: dialogue_unlocked.sentences.Array.data[2]
+      value: The cabinet has been uncocked by the red key.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6164318997582992152, guid: 0e34db1d3db5d4a4684a09bf8aaf0176, type: 3}
+      propertyPath: m_Name
+      value: Cabinet
+      objectReference: {fileID: 0}
+    - target: {fileID: 8770979266615047056, guid: 0e34db1d3db5d4a4684a09bf8aaf0176, type: 3}
+      propertyPath: m_Size.x
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 8770979266615047056, guid: 0e34db1d3db5d4a4684a09bf8aaf0176, type: 3}
+      propertyPath: m_Size.y
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 8770979266615047056, guid: 0e34db1d3db5d4a4684a09bf8aaf0176, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2ef9dba52774b4497890aa8c0c113ad1, type: 3}
+    - target: {fileID: 8770979266615047056, guid: 0e34db1d3db5d4a4684a09bf8aaf0176, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0e34db1d3db5d4a4684a09bf8aaf0176, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -4564,7 +4548,7 @@ SceneRoots:
   - {fileID: 1449167491}
   - {fileID: 622489681}
   - {fileID: 928217815}
-  - {fileID: 1386518126}
+  - {fileID: 4479374326870386648}
   - {fileID: 1448387848}
   - {fileID: 2652420879256294899}
   - {fileID: 1437272311}
