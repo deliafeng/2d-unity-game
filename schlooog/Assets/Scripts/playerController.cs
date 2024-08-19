@@ -17,6 +17,8 @@ public class playerController : MonoBehaviour
 
     public bool inDialogue = false;
 
+    public dialogueManager dialogueManager;
+
     public Animator inventoryAnimator;
     private bool isInventoryOpen = false;
     private Animator playerAnimation;
@@ -209,7 +211,12 @@ public class playerController : MonoBehaviour
     {
         if (hit && hit.collider.CompareTag("Interactable"))
         {
+            dialogueManager.interactable = hit.collider.gameObject.GetComponent<Interactable>();
+
+
             hit.collider.GetComponent<Interactable>().TriggerDialogue();
+            
+
         }
         else if (hit && hit.collider.CompareTag("Collectible"))
         {

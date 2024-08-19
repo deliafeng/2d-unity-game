@@ -7,8 +7,9 @@ public class Interactable : MonoBehaviour
 
     public Dialogue dialogue;
 
-
-    //Boolean to ensure conversation can't be called again when X is being pressed
+    public GameObject UI;
+    public int sceneActivationNumber = -1;
+    public int sceneDeactivationNumber = -1;
 
    
 
@@ -17,4 +18,22 @@ public class Interactable : MonoBehaviour
       FindObjectOfType<dialogueManager>().StartDialogue(dialogue);
 
     }
+
+    public void TriggerScene()
+    {
+
+        
+       UI.SetActive(true);
+        
+    }
+
+    public void EndScene()
+    {
+
+
+        UI.SetActive(false);
+
+    }
+
+
 }

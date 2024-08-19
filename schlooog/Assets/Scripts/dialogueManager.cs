@@ -14,6 +14,11 @@ public class dialogueManager : MonoBehaviour
     public Image canvasSprite;
 
     public Animator animator;
+    //Tracks the number of dialogue sentences that have appeared
+    public int sentenceCount = 0;
+
+    public Interactable interactable;
+
     private bool isActivated = false;
 
 
@@ -52,16 +57,55 @@ public class dialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
+        //Makes player stop moving when dialogue is triggered
         FindObjectOfType<playerController>().inDialogue = true;
+
         if (isActivated)
         {
-            if (sentences.Count == 0)
+            if (sentences.Count == 0 && interactable == null)
             {
+                EndDialogue();
+                return;
+                
+            }
+            if (sentences.Count == 0 && interactable != null)
+            {
+                interactable.EndScene();
                 EndDialogue();
                 return;
             }
 
-            string sentence = sentences.Dequeue();
+            string sentence = null;
+
+            //Either displays sentences or triggers a scene if it is an interactable, or if it is not an interactable, just displays dialogue
+
+            if (interactable != null)
+            {
+                if (interactable.sceneActivationNumber == sentenceCount)
+                {
+                    interactable.TriggerScene();
+                    sentence = sentences.Dequeue();
+                    sentenceCount += 1;
+
+                } else if (interactable.sceneDeactivationNumber + 1 == sentenceCount)
+                {
+                    
+                    interactable.EndScene();
+                    sentence = sentences.Dequeue();
+                    sentenceCount += 1;
+                }
+                else
+                {
+                    sentence = sentences.Dequeue();
+                    sentenceCount += 1;
+                }
+            }
+            else
+            {
+                sentence = sentences.Dequeue();
+                sentenceCount += 1;
+            }
+
             Sprite sprite = sprites.Dequeue();
             if (sprite != null)
             {
@@ -72,6 +116,7 @@ public class dialogueManager : MonoBehaviour
         }
 
     }
+
 
     IEnumerator TypeSentence(string sentence)
     {
@@ -85,6 +130,10 @@ public class dialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
+        //Set back to null
+        sentenceCount = 0;
+        interactable = null;
+
         animator.SetBool("isActivated", false);
         isActivated = false;
         FindObjectOfType<playerController>().inDialogue = false;
