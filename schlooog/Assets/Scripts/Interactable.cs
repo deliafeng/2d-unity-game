@@ -15,6 +15,7 @@ public class Interactable : MonoBehaviour
 
     public void TriggerDialogue()
     {
+
       FindObjectOfType<dialogueManager>().StartDialogue(dialogue);
 
     }
@@ -22,17 +23,18 @@ public class Interactable : MonoBehaviour
     public void TriggerScene()
     {
 
-        
-       UI.SetActive(true);
-        
+        if (UI != null) { 
+            UI.SetActive(true);
+        }
     }
 
     public void EndScene()
     {
 
-
-        UI.SetActive(false);
-
+        if (UI != null)
+        {
+            UI.SetActive(false);
+        }
     }
 
 
