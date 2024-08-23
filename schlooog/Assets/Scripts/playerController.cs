@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour
 {
+    public GameObject InventoryToggle;
     [SerializeField] private UIInventory uiInventory;
     public float playerSpeed = 128f;
     public Transform movePoint;
@@ -34,6 +35,7 @@ public class playerController : MonoBehaviour
 
         inventory = new Inventory();
         uiInventory.SetInventory(inventory);
+        InventoryToggle.SetActive(true);
     }
     // Update is called once per frame
     void Update()

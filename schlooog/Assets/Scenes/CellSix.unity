@@ -352,7 +352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8534886622820974313, guid: c3edbea0112ed42caa0ec3c2e276f6a5, type: 3}
       propertyPath: m_Name
-      value: DoorToCoalROom
+      value: DoorToCoalRoom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -961,9 +961,9 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 180
+  field of view: 89
+  orthographic: 1
+  orthographic size: 135
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -988,7 +988,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -250}
+  m_LocalPosition: {x: 0, y: 0, z: -32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1051,17 +1051,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ComponentVersion: 1
-  m_AssetsPPU: 3
+  m_AssetsPPU: 4
   m_RefResolutionX: 1920
   m_RefResolutionY: 1080
-  m_CropFrame: 0
-  m_GridSnapping: 0
-  m_FilterMode: 0
+  m_CropFrame: 3
+  m_GridSnapping: 1
+  m_FilterMode: 1
   m_UpscaleRT: 0
   m_PixelSnapping: 0
   m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
+--- !u!1 &521417278 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 381257243463041830, guid: 09d73cd04261a4dd9b5968ba5843bf4d, type: 3}
+  m_PrefabInstance: {fileID: 1448387848}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &567046536
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1182,7 +1187,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1904948594}
   m_Father: {fileID: 0}
@@ -2011,7 +2016,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 381257243463041830, guid: 09d73cd04261a4dd9b5968ba5843bf4d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 811891322861767947, guid: 09d73cd04261a4dd9b5968ba5843bf4d, type: 3}
       propertyPath: m_fontSize
@@ -2223,7 +2228,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2059621198123663318, guid: 09d73cd04261a4dd9b5968ba5843bf4d, type: 3}
   m_PrefabInstance: {fileID: 1448387848}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 521417278}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c72e4a0c60c4893418e3a83915779357, type: 3}
@@ -4721,6 +4726,10 @@ PrefabInstance:
       propertyPath: uiInventory
       value: 
       objectReference: {fileID: 1448387850}
+    - target: {fileID: 4707297088954194862, guid: c7fdf46689ec94d48af6097820d9c47f, type: 3}
+      propertyPath: InventoryToggle
+      value: 
+      objectReference: {fileID: 521417278}
     - target: {fileID: 4707297088954194862, guid: c7fdf46689ec94d48af6097820d9c47f, type: 3}
       propertyPath: dialogueManager
       value: 
