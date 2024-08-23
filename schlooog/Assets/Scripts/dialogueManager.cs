@@ -104,6 +104,7 @@ public class dialogueManager : MonoBehaviour
             {
                 sentence = sentences.Dequeue();
                 sentenceCount += 1;
+
             }
 
             Sprite sprite = sprites.Dequeue();
