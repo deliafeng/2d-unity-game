@@ -5,15 +5,18 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour
 {
+    //inventorytoggle just toggles on and off inventory upon load
     public GameObject InventoryToggle;
     [SerializeField] private UIInventory uiInventory;
     public float playerSpeed = 128f;
+    private float WalkSpeed;
     public Transform movePoint;
 
     public LayerMask obstacle;
     public LayerMask teleporter;
+    public LayerMask Push;
 
-    private int direction = 4;
+    public int direction = 4;
     private Ray ray;
 
     public bool inDialogue = false;
@@ -25,11 +28,12 @@ public class playerController : MonoBehaviour
     private Animator playerAnimation;
     private RaycastHit2D hit;
     private Inventory inventory;
+    public Push p;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        float WalkSpeed = playerSpeed;
         movePoint.parent = null;
         playerAnimation = this.gameObject.GetComponent<Animator>();
 
@@ -40,9 +44,10 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Grid movement
+        //All actions outside of Dialogue
         if (!inDialogue)
         {
+            //Grid Movement
             transform.position = Vector3.MoveTowards(transform.position, movePoint.position, playerSpeed * Time.deltaTime);
 
             if (Vector3.Distance(transform.position, movePoint.position) == 0f)
@@ -50,11 +55,7 @@ public class playerController : MonoBehaviour
 
                 if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f)
                 {
-                    if (Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal") * 32, 0f, 0f), .2f, teleporter)) {
 
-
-
-                    }
                     if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal") * 32, 0f, 0f), .2f, obstacle))
                     {
                         movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal") * 32, 0f, 0f);
@@ -78,7 +79,7 @@ public class playerController : MonoBehaviour
                 }
             }
 
-            //Direction the character is facing
+            //Animations
             //0 is up, 1 is right, 2 is down, 3 is left
 
             if (Input.GetAxisRaw("Vertical") == 1f)
@@ -148,11 +149,11 @@ public class playerController : MonoBehaviour
         //Shift to Sprint
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            playerSpeed *= 1.4f;
+            playerSpeed *= 1.5f;
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            playerSpeed = 128f;
+            playerSpeed = WalkSpeed;
         }
 
         //Interactable and collectible detection
@@ -251,6 +252,8 @@ public class playerController : MonoBehaviour
                 hit.collider.GetComponent<Unlockable>().LockedDialogue();
             }
         }
+        
     }
 }
+
 
