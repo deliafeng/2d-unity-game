@@ -288,6 +288,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2599955861015302171, guid: c3edbea0112ed42caa0ec3c2e276f6a5, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 1100590814}
+    - target: {fileID: 2599955861015302171, guid: c3edbea0112ed42caa0ec3c2e276f6a5, type: 3}
+      propertyPath: stool
+      value: 
+      objectReference: {fileID: 1589259539}
+    - target: {fileID: 2599955861015302171, guid: c3edbea0112ed42caa0ec3c2e276f6a5, type: 3}
       propertyPath: nextSceneName
       value: Hallway
       objectReference: {fileID: 0}
@@ -369,7 +377,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8534886622820974313, guid: c3edbea0112ed42caa0ec3c2e276f6a5, type: 3}
       propertyPath: m_Name
-      value: DoorToCoalRoom
+      value: DoorToHallway
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -780,7 +788,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 757795293829028439, guid: dd0b4d60f71124b6f9e3be8ebe492fac, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -165.02011
+      value: -158
       objectReference: {fileID: 0}
     - target: {fileID: 757795293829028439, guid: dd0b4d60f71124b6f9e3be8ebe492fac, type: 3}
       propertyPath: m_LocalPosition.z
@@ -982,7 +990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 757795293829028439, guid: dd0b4d60f71124b6f9e3be8ebe492fac, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -164.49905
+      value: -161
       objectReference: {fileID: 0}
     - target: {fileID: 757795293829028439, guid: dd0b4d60f71124b6f9e3be8ebe492fac, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1087,8 +1095,8 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0
+    x: -0.101041675
+    y: -0.35555553
     width: 1
     height: 1
   near clip plane: 0.3
@@ -1120,7 +1128,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -32}
+  m_LocalPosition: {x: 0, y: 16, z: -32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1291,7 +1299,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 609497604}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: MovePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2072,6 +2080,50 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &1100590813
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1100590815}
+  - component: {fileID: 1100590814}
+  m_Layer: 0
+  m_Name: UserData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1100590814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100590813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbf8d86938717648a1a2595f0c076a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1100590815
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100590813}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1121701258 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8986260715328207064, guid: dd0b4d60f71124b6f9e3be8ebe492fac, type: 3}
@@ -3410,7 +3462,8 @@ GameObject:
   - component: {fileID: 1589259544}
   - component: {fileID: 1589259541}
   - component: {fileID: 1589259545}
-  m_Layer: 8
+  - component: {fileID: 1589259546}
+  m_Layer: 0
   m_Name: Old Stepstool
   m_TagString: ObjToPush
   m_Icon: {fileID: 0}
@@ -3544,8 +3597,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pController: {fileID: 1881049885}
   movePoint: {fileID: 609497604}
-  blockedVert: 0
-  blockedHoriz: 0
+  blockedVertDir: 0
+  blockedHorizDir: 0
+  Key_Position: {fileID: 0}
+  positionedDialogue:
+    name: 
+    sentences: []
+    sprites: []
 --- !u!50 &1589259545
 Rigidbody2D:
   serializedVersion: 4
@@ -3573,6 +3631,29 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1589259546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589259539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 909723ae75d4140febe0594d808f83d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Old Stepstool
+    sentences:
+    - 
+    - An old stepstool. You could probably push this around.
+    sprites:
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 38dc9d6a2c258954288c37bc2eca2b03, type: 3}
+  UI: {fileID: 0}
+  sceneActivationNumber: -1
+  sceneDeactivationNumber: -1
 --- !u!1001 &1600109831
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4009,7 +4090,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!114 &1881049885 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4707297088954194862, guid: c7fdf46689ec94d48af6097820d9c47f, type: 3}
@@ -5297,7 +5378,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 757795293829028439, guid: dd0b4d60f71124b6f9e3be8ebe492fac, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -165.57065
+      value: -156.1
       objectReference: {fileID: 0}
     - target: {fileID: 757795293829028439, guid: dd0b4d60f71124b6f9e3be8ebe492fac, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6245,6 +6326,10 @@ PrefabInstance:
       propertyPath: teleporter.m_Bits
       value: 128
       objectReference: {fileID: 0}
+    - target: {fileID: 7029169854862294277, guid: c7fdf46689ec94d48af6097820d9c47f, type: 3}
+      propertyPath: m_EdgeRadius
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6374,3 +6459,4 @@ SceneRoots:
   - {fileID: 123550240}
   - {fileID: 811963697}
   - {fileID: 1589259543}
+  - {fileID: 1100590815}

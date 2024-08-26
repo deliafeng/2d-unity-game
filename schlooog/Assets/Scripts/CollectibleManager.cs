@@ -5,7 +5,7 @@ using UnityEngine;
 public class CollectibleManager : MonoBehaviour
 {
 
-    private string name;
+    private new string name;
 
 
     //method declares item as being held by the user (things can be interacted with later on) and

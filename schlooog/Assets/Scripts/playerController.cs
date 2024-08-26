@@ -14,8 +14,6 @@ public class playerController : MonoBehaviour
 
     public LayerMask obstacle;
     public LayerMask teleporter;
-    public LayerMask Push;
-
     public int direction = 4;
     private Ray ray;
 
@@ -33,7 +31,7 @@ public class playerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        float WalkSpeed = playerSpeed;
+        WalkSpeed = playerSpeed; 
         movePoint.parent = null;
         playerAnimation = this.gameObject.GetComponent<Animator>();
 
@@ -56,7 +54,7 @@ public class playerController : MonoBehaviour
                 if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f)
                 {
 
-                    if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal") * 32, 0f, 0f), .2f, obstacle))
+                    if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal") * 32, 0f, 0f), .2f, obstacle)&&Input.GetAxisRaw("Horizontal")!=p.blockedHorizDir)
                     {
                         movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal") * 32, 0f, 0f);
 
@@ -67,7 +65,7 @@ public class playerController : MonoBehaviour
                 else if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f)
                 {
 
-                    if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical") * 32, 0f), .2f, obstacle))
+                    if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical") * 32, 0f), .2f, obstacle)&&Input.GetAxisRaw("Vertical")!=p.blockedVertDir)
                     {
                         movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical") * 32, 0f);
 
@@ -250,6 +248,14 @@ public class playerController : MonoBehaviour
             else
             {
                 hit.collider.GetComponent<Unlockable>().LockedDialogue();
+            }
+        }
+        else if (hit&&hit.collider.CompareTag("Push"))
+        {
+            if (p.targetReached)
+            {
+                dialogueManager.interactable = hit.collider.gameObject.GetComponent<Interactable>();
+                hit.collider.GetComponent<Interactable>().TriggerDialogue();
             }
         }
         
