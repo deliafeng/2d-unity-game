@@ -28,7 +28,7 @@ public class Teleport : MonoBehaviour
             {
                 SceneManager.LoadScene(nextSceneName);
             }
-            if(collider.gameObject.CompareTag("ObjToPush"))
+            if(collider.gameObject.CompareTag("Interactable"))
             {
                 collider.gameObject.SetActive(false);
                 Data.StoolInHallway = true;

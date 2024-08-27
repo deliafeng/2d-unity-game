@@ -132,13 +132,14 @@ public class playerController : MonoBehaviour
 
                 if (!isInventoryOpen)
                 {
-                    uiInventory.SetInventory(inventory);
                     inventoryAnimator.SetBool("isOpen", true);
                     isInventoryOpen = true;
                 } else
                 {
                     inventoryAnimator.SetBool("isOpen", false);
                     isInventoryOpen = false;
+                    uiInventory.itemName.gameObject.SetActive(false);
+                    uiInventory.itemDesc.gameObject.SetActive(false);
                 }
             }
         }
@@ -222,9 +223,16 @@ public class playerController : MonoBehaviour
         else if (hit && hit.collider.CompareTag("Collectible"))
         {
             hit.collider.GetComponent<Collectible>().CollectItem();
-            inventory.AddItem(hit.collider.GetComponent<Collectible>().item);
-            inventory.AddItem(hit.collider.GetComponent<Collectible>().item2);
-        } else if (hit && hit.collider.CompareTag("Unlockable"))
+            if (hit.collider.GetComponent<Collectible>().item.amount>0) {
+                inventory.AddItem(hit.collider.GetComponent<Collectible>().item);
+            }
+        
+            if (hit.collider.GetComponent<Collectible>().item2.amount>0) {
+                inventory.AddItem(hit.collider.GetComponent<Collectible>().item2);
+            }
+        }
+            
+         else if (hit && hit.collider.CompareTag("Unlockable"))
         {
             bool unlocked = false;
             Item key = hit.collider.GetComponent<Unlockable>().keyItem;  

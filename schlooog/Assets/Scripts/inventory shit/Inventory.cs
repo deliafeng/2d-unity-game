@@ -19,17 +19,25 @@ public class Inventory {
     }
 
     public void AddItem(Item item) {
-        itemList.Add(item);
-        OnItemListChanged?.Invoke(this, EventArgs.Empty);
+        
+            itemList.Add(item);
+            OnItemListChanged?.Invoke(this, EventArgs.Empty);
+        
     }
 
     public List<Item> GetItemList() {
+        
         return itemList;
     }
 
     public void RemoveItem(Item removedItem)
     {
+        
         itemList.Remove(removedItem);
+    }
+
+    public void ShowDesc(Item item){
+
     }
 
 }

@@ -56,5 +56,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "schlooog.sln"
+    "dotnet.defaultSolution": "schlooog.sln",
+    "dotnet.preferCSharpExtension": true
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,11 +6,11 @@ using UnityEngine;
 
 public class Item {
     public enum ItemType{
-        redKey,
-        bluKey,
-        ylwKey,
-        grnKey,
-        wood,
+        RedKey,
+        BlueKey,
+        YellowKey,
+        GreenKey,
+        Wood,
 
     }
 public ItemType itemType;
@@ -18,15 +19,31 @@ public int amount;
 public Sprite GetSprite() {
     switch (itemType) {
         default:
-        case ItemType.redKey: return ItemAssets.Instance.redKeySprite;
+        case ItemType.RedKey: return ItemAssets.Instance.redKeySprite;
 
-        case ItemType.bluKey: return ItemAssets.Instance.bluKeySprite;
+        case ItemType.BlueKey: return ItemAssets.Instance.bluKeySprite;
 
-        case ItemType.ylwKey: return ItemAssets.Instance.ylwKeySprite;
+        case ItemType.YellowKey: return ItemAssets.Instance.ylwKeySprite;
 
-        case ItemType.grnKey: return ItemAssets.Instance.grnKeySprite;
+        case ItemType.GreenKey: return ItemAssets.Instance.grnKeySprite;
         
-        case ItemType.wood: return ItemAssets.Instance.wood;
+        case ItemType.Wood: return ItemAssets.Instance.woodSprite;
+
+    }
+}
+
+public string GetDesc() {
+    switch (itemType) {
+        default:
+        case ItemType.RedKey: return ItemAssets.Instance.redKeyDesc;
+
+        case ItemType.BlueKey: return ItemAssets.Instance.bluKeyDesc;
+
+        case ItemType.YellowKey: return ItemAssets.Instance.ylwKeyDesc;
+
+        case ItemType.GreenKey: return ItemAssets.Instance.grnKeyDesc;
+        
+        case ItemType.Wood: return ItemAssets.Instance.woodDesc;
 
     }
 }
