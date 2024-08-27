@@ -223,10 +223,11 @@ public class playerController : MonoBehaviour
         {
             hit.collider.GetComponent<Collectible>().CollectItem();
             inventory.AddItem(hit.collider.GetComponent<Collectible>().item);
+            inventory.AddItem(hit.collider.GetComponent<Collectible>().item2);
         } else if (hit && hit.collider.CompareTag("Unlockable"))
         {
             bool unlocked = false;
-            Item key = hit.collider.GetComponent<Unlockable>().item;  
+            Item key = hit.collider.GetComponent<Unlockable>().keyItem;  
             List<Item> list = inventory.GetItemList();
 
             Item usedItem = null;
@@ -242,20 +243,24 @@ public class playerController : MonoBehaviour
 
             if (unlocked)
             {
-                hit.collider.GetComponent<Unlockable>().UnlockedDialogue();
                 inventory.RemoveItem(usedItem);
+                hit.collider.GetComponent<Unlockable>().UnlockedDialogue();
+                if (hit.collider.gameObject.GetComponent<Unlockable>().hasItem)
+                {
+                    inventory.AddItem(hit.collider.GetComponent<Unlockable>().containedItem);
+                }
             }
             else
             {
                 hit.collider.GetComponent<Unlockable>().LockedDialogue();
             }
         }
-        else if (hit&&hit.collider.CompareTag("Push"))
+        else if (hit&&hit.collider.CompareTag("ObjToPush"))
         {
             if (p.targetReached)
             {
-                dialogueManager.interactable = hit.collider.gameObject.GetComponent<Interactable>();
-                hit.collider.GetComponent<Interactable>().TriggerDialogue();
+                hit.collider.GetComponent<Collectible>().CollectItem();
+                inventory.AddItem(hit.collider.GetComponent<Collectible>().item);
             }
         }
         

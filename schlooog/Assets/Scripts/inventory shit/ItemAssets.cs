@@ -17,5 +17,6 @@ public class ItemAssets : MonoBehaviour
     public Sprite bluKeySprite;
     public Sprite ylwKeySprite;
     public Sprite grnKeySprite;
+    public Sprite wood;
 
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using CodeMonkey.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 [System.Serializable]
@@ -21,8 +22,12 @@ public class UIInventory : MonoBehaviour
 
     public void SetInventory(Inventory inventory) {
         inv = inventory;
+        inv.OnItemListChanged += Inventory_OnItemListChanged;
         RefreshInventoryItems();
         
+    }
+    private void Inventory_OnItemListChanged(object sender, System.EventArgs e) {
+        RefreshInventoryItems();
     }
 
     private void RefreshInventoryItems() {
@@ -30,10 +35,13 @@ public class UIInventory : MonoBehaviour
         int y = 0;
         float itemSlotCellSize = 120f;
         foreach (Item item in inv.GetItemList()) {
-
+            
             RectTransform itemSlotRectTransform = Instantiate(itemSlotTemplate, itemSlotContainer).GetComponent<RectTransform>();
             itemSlotRectTransform.gameObject.SetActive(true);
-
+            //On left click, show item desc
+            itemSlotRectTransform.GetComponent<Button_UI>().ClickFunc = () => {
+                //show desc
+            };
             itemSlotRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize, y*itemSlotCellSize);
             Image image = itemSlotRectTransform.Find("itemImage").GetComponent<Image>();
             image.sprite = item.GetSprite();

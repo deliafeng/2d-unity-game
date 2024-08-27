@@ -6,6 +6,7 @@ public class Collectible : MonoBehaviour
 {
 
     public Item item;
+    public Item item2;
     public Dialogue dialogue;
 
     //also include item sprite later

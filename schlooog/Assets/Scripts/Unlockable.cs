@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Unlockable : MonoBehaviour
 {
-    public Item item;
+    public Item keyItem;
 
     public Dialogue dialogue_locked;
     public Dialogue dialogue_unlocked;
+    public bool isDoor;
+    public bool hasItem;
+    public Item containedItem;
 
     public void LockedDialogue()
     {

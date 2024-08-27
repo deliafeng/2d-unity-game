@@ -9,6 +9,7 @@ public class Item {
         bluKey,
         ylwKey,
         grnKey,
+        wood,
 
     }
 public ItemType itemType;
@@ -24,6 +25,8 @@ public Sprite GetSprite() {
         case ItemType.ylwKey: return ItemAssets.Instance.ylwKeySprite;
 
         case ItemType.grnKey: return ItemAssets.Instance.grnKeySprite;
+        
+        case ItemType.wood: return ItemAssets.Instance.wood;
 
     }
 }

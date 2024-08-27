@@ -102,6 +102,10 @@ public class Push : MonoBehaviour
         {
             targetReached = true;
         }
+        else
+        {
+            targetReached=false;
+        }
     }
 
 //Check if touched by Player
